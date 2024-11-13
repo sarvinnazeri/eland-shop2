@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.000001%{
+    transform: translateX(100%);
+  }
+  99.99999% {
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translate(100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 30s linear infinite;
+}
+
+/* styles/globals.css */
+
+/* Add custom font */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/Iranian Sans.ttf') format('truetype'),
+       url('/fonts/MyCustomFont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply custom font globally */
+body {
+  font-family: 'MyCustomFont', sans-serif;
+}
